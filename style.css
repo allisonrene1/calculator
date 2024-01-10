@@ -17,6 +17,12 @@
   background: #aaa;
 }
 
+.btn-pink,
+.btn-blue,
+.btn {
+  color: black;
+}
+
 .screen {
   padding: 10px 20px;
   border: 2px solid #333;
