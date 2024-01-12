@@ -9,6 +9,7 @@
 }
 
 .disable-doubletap-to-zoom {
+  touch-action: none;
   touch-action: manipulation;
 }
 
