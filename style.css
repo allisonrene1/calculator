@@ -8,6 +8,10 @@
   margin-top: 50px;
 }
 
+.disable-doubletap-to-zoom {
+  touch-action: manipulation;
+}
+
 .calculator {
   width: 400px;
   height: auto;
