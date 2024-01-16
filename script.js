@@ -77,7 +77,7 @@ operatorButtons.forEach((op) =>
 
 // Evaluating and displaying the result of operation
 equalsButton.addEventListener("click", function () {
-  if (previousValue != "" && currentValue != "") {
+  if ((previousValue != "" && currentValue != "") || previousValue == "") {
     performOperation();
   }
 });
@@ -93,16 +93,14 @@ clearButton.addEventListener("click", function () {
 
 // Delete button as a named function with an event listener right below it. Don't ask me why. I'm tired
 function deleteButtonClickHandler() {
-  if (previousValue !== "") {
-    currentValue = currentValue.toString().slice(0, -1);
-    if (currentValue === "") {
-      currentValue = previousValue.toString().slice(0, 9);
-      previousValue = "";
-    }
-  } else {
-    currentValue = currentValue.toString().slice(0, -1);
+  currentValue = currentValue.toString().slice(0, -1);
+  displayScreen.textContent = currentValue;
+
+  if (previousValue !== "" && currentValue === "" && operator === "") {
+    previousValue = previousValue.toString().slice(0, 8);
+    previousValue = previousValue.toString().slice(0, -1);
+    displayScreen.textContent = previousValue;
   }
-  displayScreen.textContent = currentValue || "0";
 }
 deleteButton.addEventListener("click", deleteButtonClickHandler);
 
